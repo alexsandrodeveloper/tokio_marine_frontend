@@ -1,0 +1,28 @@
+# Arquivos gerados pelo build do Angular
+/dist/
+/tmp/
+/*.pem
+
+# Dependências instaladas via npm
+/node_modules/
+/package-lock.json
+
+# Arquivos gerados pelo Angular CLI
+/.angular-cli.json
+/angular.json
+/*.js
+/*.map
+/*.ico
+/*.html
+/*.css
+
+# Arquivos temporários de teste
+/e2e/*.log
+/e2e/*.png
+
+# Outros arquivos e diretórios a serem ignorados
+*.log
+*.pot
+*.scss
+*.tgz
+*.zip
