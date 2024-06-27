@@ -17,15 +17,11 @@ export class ListarTransferenciasComponent implements OnInit {
 
   constructor(private transferenciaService: TransferenciaService) { }
 
-  ngOnInit() {
-    if (this.token) {
-      this.transferenciaService.listarTransferencias(this.token).subscribe(response => {
+  ngOnInit(): void {
+    this.transferenciaService.listarTransferencias().subscribe(
+      response => {
         this.transferencias = response;
-      }, error => {
-        alert('Erro ao listar transferências.');
-      });
-    } else {
-      alert('Token não disponível.');
-    }
+      }
+    );
   }
 }

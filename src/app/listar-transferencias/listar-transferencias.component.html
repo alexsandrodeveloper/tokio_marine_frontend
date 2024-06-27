@@ -1,8 +1,27 @@
 <div>
   <h2>Transferências Agendadas</h2>
-  <ul>
-    <li *ngFor="let transferencia of transferencias">
-      {{ transferencia | json }}
-    </li>
-  </ul>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Conta Origem</th>
+        <th>Conta Destino</th>
+        <th>Valor</th>
+        <th>Taxa</th>
+        <th>Data Transferência</th>
+        <th>Data Agendamento</th>
+        <th>Taxa Calculada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transferencia of transferencias">
+        <td>{{ transferencia.contaOrigem }}</td>
+        <td>{{ transferencia.contaDestino }}</td>
+        <td>{{ transferencia.valor | currency:'BRL':'symbol':'1.2-2' }}</td>
+        <td>{{ transferencia.taxa | number:'1.2-2' }}</td>
+        <td>{{ transferencia.dataTransferencia | date:'dd/MM/yyyy' }}</td>
+        <td>{{ transferencia.dataAgendamento | date:'dd/MM/yyyy' }}</td>
+        <td>{{ transferencia.taxaCalculada | number:'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,0 +1,40 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ajusta a altura para ocupar toda a tela */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left; /* Alinha o texto à esquerda */
+  width: 300px; /* Define uma largura fixa para o formulário */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 8px;
+  width: calc(100% - 16px); /* Calcula a largura do input com o padding descontado */
+  box-sizing: border-box;
+}
+
+button.btn-register {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%; /* Faz o botão ocupar toda a largura do seu container */
+  max-width: 300px; /* Define uma largura máxima para o botão */
+  margin-top: 10px; /* Margem acima do botão para separação */
+}
+
+button.btn-register:hover {
+  background-color: #0056b3;
+}

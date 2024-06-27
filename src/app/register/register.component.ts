@@ -26,7 +26,6 @@ export class RegisterComponent {
         },
         error => {
           console.error('Erro ao registrar usuário:', error);
-          // Tratamento de erro adequado, como exibir mensagem ao usuário
         }
       );
   }

@@ -19,14 +19,13 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   register(username: string, password: string): Observable<any> {
-    return this.http.post(this.registerUrl, { username, password });
+    return this.http.post(this.registerUrl, { username, password })
   }
 
   authenticate(username: string, password: string): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(this.authenticateUrl, { username, password })
       .pipe(
-        tap((response: AuthResponse) => { // Aqui tipamos explicitamente 'response' como AuthResponse
-          // Armazena o token no localStorage
+        tap((response: AuthResponse) => {
           localStorage.setItem(this.localStorageKey, JSON.stringify({
             token: response.token,
             expiry: new Date().getTime() + 24 * 60 * 60 * 1000 // Expira em um dia
