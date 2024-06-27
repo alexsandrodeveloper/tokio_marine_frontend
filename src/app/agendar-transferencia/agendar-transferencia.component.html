@@ -1,0 +1,35 @@
+<form [formGroup]="transferenciaForm" (ngSubmit)="agendar()">
+  <div>
+    <label for="contaOrigem">Conta de Origem:</label>
+    <input id="contaOrigem" formControlName="contaOrigem">
+    <div *ngIf="transferenciaForm.get('contaOrigem')?.invalid && transferenciaForm.get('contaOrigem')?.touched">
+      Conta de origem é obrigatória.
+    </div>
+  </div>
+
+  <div>
+    <label for="contaDestino">Conta de Destino:</label>
+    <input id="contaDestino" formControlName="contaDestino">
+    <div *ngIf="transferenciaForm.get('contaDestino')?.invalid && transferenciaForm.get('contaDestino')?.touched">
+      Conta de destino é obrigatória.
+    </div>
+  </div>
+
+  <div>
+    <label for="valor">Valor:</label>
+    <input id="valor" type="number" formControlName="valor">
+    <div *ngIf="transferenciaForm.get('valor')?.invalid && transferenciaForm.get('valor')?.touched">
+      Valor é obrigatório e deve ser positivo.
+    </div>
+  </div>
+
+  <div>
+    <label for="dataTransferencia">Data da Transferência:</label>
+    <input id="dataTransferencia" type="date" formControlName="dataTransferencia">
+    <div *ngIf="transferenciaForm.get('dataTransferencia')?.invalid && transferenciaForm.get('dataTransferencia')?.touched">
+      Data da transferência é obrigatória.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="transferenciaForm.invalid">Agendar Transferência</button>
+</form>
